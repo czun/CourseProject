@@ -1,0 +1,104 @@
+==================================================================
+
+			CodeBook for Tidy Data Set
+==================================================================
+VARIABLES:
+==================================================================
+SubjectID
+The subject who performed the activity for each window sample. Its range is from 1 to 30.
+
+Activity
+Each person performed six activities 
+1 Walking
+2 Walking_Upstairs
+3 Walking_Donwstairs
+4 Sitting 
+5 Standking
+6 Laying 
+
+tBodyAcc-XYZ
+Mean body acceleration time signal in the X, Y, and Z directions. Units are in standard gravity units (g) per second.
+
+tGravityAcc-XYZ
+Mean gravity acceleration time signal in the X, Y, and Z directions. Units are in seconds
+
+tBodyAccJerk-XYZ
+Mean body acceleration jerk time signal in the X, Y, and Z directions
+
+tBodyGyro-XYZ
+Mean body gyroscope time signal in the X, Y, and Z directions
+
+tBodyGyroJerk-XYZ
+Mean body gyroscope jerk time signal in the X, Y, and Z directions
+
+tBodyAccMag
+Mean magnitude of body acceleration time signal
+
+tGravityAccMag
+Mean magnitude of gravity acceleration time signal
+
+tBodyAccJerkMag
+Mean magnitude of body acceleration jerk time signal
+
+tBodyGyroMag
+Mean magnitude of body gyroscope time signal
+
+tBodyGyroJerkMag
+Mean magnitude of body gyrpscope jerk time signal
+
+fBodyAcc-XYZ
+Mean body acceleration frequency signal in the X, Y, and Z directions
+
+fBodyAccJerk-XYZ
+Mean body acceleration jerk frequency signal in the X, Y, and Z directions
+
+fBodyGyro-XYZ
+Mean body gyroscope frequency signal in the X, Y, and Z directions
+
+fBodyAccMag
+Mean magnitude of body acceleration frequency signal 
+
+fBodyAccJerkMag
+Mean magnitude of body acceleration jerk frequency signal 
+
+fBodyGyroMag
+Mean magnitude of body gyroscope frequency signal 
+
+fBodyGyroJerkMag
+Magnitude of Gyroscope jerk frequency signal 
+
+==================================================================
+Description of Data:
+==================================================================
+The data comes from the Human Activity Recognition database from UCI’s Machine Learning Repository. The database was built from the recordings of 30 subjects performing activities of daily living while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+DataSet and Attribute Information from UCI Website (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones):
+
+Data Set Information:
+
+“The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.”
+
+Attribute Information:
+
+For each record in the dataset it is provided: 
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+Source:
+Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
+1 - Smartlab - Non-Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy. 
+2 - CETpD - Technical Research Centre for Dependency Care and Autonomous Living
+Universitat Politècnica de Catalunya (BarcelonaTech). Vilanova i la Geltrú (08800), Spain
+activityrecognition '@' smartlab.ws
+
+==================================================================
+Tranformation of Data
+==================================================================
+For this assignment I combined the training and the test sets to create one large data set. I subsetted for the the measurements of the mean and standard deviation for each measurement. I then used the descriptive activity names to label the activities and labeled the measurements with descriptive variable names found in features.txt. I then subsetted for the mean of each measurement (so I deleted all standard deviation measurements) and creates a second independent tidy data set with the average of each variable for each activity and each subject. I combined the X,Y,and Z measurements into one variable since they are not independent of each other. The final data set has a total of 17 variables.
+
